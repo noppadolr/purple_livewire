@@ -11,6 +11,8 @@
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('admin/assets/images/favicon.ico') }}">
+                <!-- Jquery Toast css -->
+                <link href="{{ asset('admin/assets/libs/jquery-toast-plugin/jquery.toast.min.css') }}" rel="stylesheet" type="text/css" />
 
 		<!-- Theme Config Js -->
 		<script src="{{ asset('admin/assets/js/head.js') }}"></script>
@@ -23,6 +25,10 @@
 
 		<!-- Icons css -->
 		<link href="{{ asset('admin/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+
+
+
+        @stack('Styles')
     </head>
 
     <body class="authentication-bg authentication-bg-pattern">
@@ -44,6 +50,15 @@
         <script src="{{ asset('jquery-3.7.1.min.js') }}"></script>
         <!-- Authentication js -->
 <script src="{{ asset('admin/assets/js/pages/authentication.init.js') }}"></script>
+<script src="{{ asset('admin/assets/js/vendor.min.js') }}"></script>
+
+<!-- App js -->
+<script src="{{ asset('admin/assets/js/app.min.js') }}"></script>
+        <!-- Tost-->
+        <script src="{{ asset('admin/assets/libs/jquery-toast-plugin/jquery.toast.min.js') }}"></script>
+
+        <!-- toastr init js-->
+        <script src="{{ asset('admin/assets/js/pages/toastr.init.js') }}"></script>
 
 
     </body>

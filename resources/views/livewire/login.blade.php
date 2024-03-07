@@ -25,16 +25,27 @@
                     </div>
 
                     @if (Session::has("success"))
-                    <p class="alert alert-success my-2">
+
+                    <div class="alert alert-success  alert-dismissible fade show" role="alert">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         {{ Session::get('success') }}
-                    </p>
+                    </div>
+
+
+                    {{-- <p class="alert alert-success my-2">
+                        {{ Session::get('success') }}
+                    </p> --}}
 
                     @endif
                     @if (Session::has("login_error"))
-                    <p class="alert alert-danger my-2">
+                    <div class="alert alert-danger  alert-dismissible fade show" role="alert">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        {{ Session::get('login_error') }}
+                    </div>
+                    {{-- <p class="alert alert-danger alert-dismissible my-2">
 
                         {{ Session::get('login_error') }}
-                    </p>
+                    </p> --}}
 
                     @endif
 
