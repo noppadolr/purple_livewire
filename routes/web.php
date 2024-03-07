@@ -2,21 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Login;
+use App\Livewire\Admin\Home;
+use App\Livewire\Register;
+use App\Livewire\Logout;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Route::get('/',Login::class)->name('user.login');
+
+
+
+Route::get('register',Register::class)->name('user.register');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('home',Home::class)->name('admin.home');
+    Route::get('logout',Logout::class)->name('logout');
 });
-
-
-Route::get('login',Login::class)->name('user.login');
